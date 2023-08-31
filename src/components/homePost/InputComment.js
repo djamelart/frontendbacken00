@@ -7,9 +7,9 @@ const InputComment = ({children, post, onReply, setOnReply}) => {
     const [content, setContent] = useState('')
 
     const { auth, socket, theme  } = useSelector(state => state)
-   
-   
- 
+    const { user } = useSelector(state => state.auth);
+    const { bloquecomment } = user;
+     
       
     const dispatch = useDispatch()
 
@@ -39,13 +39,17 @@ const InputComment = ({children, post, onReply, setOnReply}) => {
     return (
         <form className="card-footer comment_input" onSubmit={handleSubmit} >
             {children}
-            <input type="text" placeholder="Ajoutez vos commentaires..."
+            <input type="text"  disabled={bloquecomment === 'bloque-comment'}   placeholder="Ajoutez vos commentaires..."
             value={content} onChange={e => setContent(e.target.value)}
             style={{
                 filter: theme ? 'invert(1)' : 'invert(0)',
                 color: theme ? 'white' : '#111',
-                background: theme ? 'rgba(0,0,0,.03)' : '',
-            }} />
+                background: theme ? 'rgba(0,0,0,.03)' : '', 
+                    
+            }}
+           
+            
+            />
 
             <Icons setContent={setContent} content={content} theme={theme} />
 

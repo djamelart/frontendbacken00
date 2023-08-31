@@ -92,13 +92,13 @@ const RightSide = () => {
         setMedia([]);
         setLoadMedia(true);
     
-        if (media.length === 0) {
+       /* if (media.length === 0) {
             setLoadMedia(false);
             return dispatch({
                 type: GLOBALTYPES.ALERT,
                 payload: { error: 'Veuillez ajouter votre photo.' },
             });
-        }
+        }*/
     
         const invalidExtensions = media.filter(file =>
             !allowedExtensions.includes(file.name.split('.').pop().toLowerCase())
@@ -257,7 +257,7 @@ const RightSide = () => {
             {user.length !== 0 &&
     <UserCard user={user}>
       <div>
-    {(auth.user.role === "superuser" || auth.user.role === "admin") &&
+    {( auth.user.role === "admin") &&
         <>
             <i className="fas fa-phone-alt" onClick={handleAudioCall} style={{ marginRight: '16px' }} />
         </>

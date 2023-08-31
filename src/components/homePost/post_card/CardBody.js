@@ -46,24 +46,23 @@ const CardBody = ({ post }) => {
           </div>
 
           <div className="card-body row">
-            <div className="col-md-6 d-flex align-items-center details-item">
-              <i className="far fa-eye text-primary mr-2" style={{ fontSize: '1.2rem' }}></i>
-              <span className="details-count" style={{ fontSize: '1rem', fontWeight: 'bold' }}>
-                {post.vistas}
-              </span>
-            </div>
-            <div className="col-md-6 d-flex align-items-center details-item">
-              <i className="far fa-heart text-danger mr-2" style={{ fontSize: '1.2rem' }}></i>
-              <span className="details-count" style={{ fontSize: '1rem', fontWeight: 'bold' }}>
-                {post.likes.length}
-              </span>
-            </div>
-          </div>
+  <div className="col-md-6 d-flex align-items-center justify-content-between">
+    <div>
+      {new Date(post.createdAt).toLocaleDateString()}
+    </div>
+    <div className="d-flex align-items-center details-item">
+      <i className="far fa-heart text-danger mr-2" style={{ fontSize: '1.2rem' }}></i>
+      <span className="details-count" style={{ fontSize: '1rem', fontWeight: 'bold' }}>
+        {post.likes.length}
+      </span>
+    </div>
+  </div>
+</div>
 
 
 
           <div className="ml-2 my-2">
-            <button className="btn btn-outline-primary form-control px-3" onClick={handleViewDetails}>
+            <button className="btn btn-primary form-control px-3" onClick={handleViewDetails}>
               <Link to={`/post/${post._id}`} className="text-white">
                 {t('Voir les détails', { lng: languagee.language })}
               </Link>

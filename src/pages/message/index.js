@@ -8,17 +8,22 @@ const Message = () => {
                 <LeftSide />
             </div>
 
-            <div className="col-md-8 px-0 right_mess">
-                <div className="d-flex justify-content-center 
-                align-items-center flex-column h-100">
+            <div className="d-flex justify-content-center align-items-center flex-column h-100">
+    <img src="/icon-web-01.png" alt="Logo de sitio" style={{ width: '8rem', marginBottom: '10px' }} />
+    <h4 style={{ fontSize: '1.5rem', color: '#333', textAlign: 'center' }}>
+        Bienvenue sur cette page dédiée aux réclamations, suggestions ou questions des utilisateurs à l'administrateur.
+    </h4>
+    <p style={{ fontSize: '1.2rem', color: '#666', textAlign: 'center', marginTop: '10px' }}>
+        Votre avis compte, n'hésitez pas à nous faire part de vos retours et besoins, Djamel 658 556 296.
+    </p>
+</div>
 
-                    <i className="fab fa-facebook-messenger text-primary"
-                    style={{fontSize: '5rem'}} />
-                    <h4>Messenger</h4>
 
-                </div>
-            </div>
-        </div>
+
+</div>
+
+         
+         
     )
 }
 

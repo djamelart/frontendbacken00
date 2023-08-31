@@ -231,14 +231,14 @@ const Home = () => {
 
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossOrigin="anonymous" />
       <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" />
-      <div className="page-wrapper chiller-theme toggled">
+       <div className="page-wrapper chiller-theme toggled" >
         
-        <nav id="sidebar" className="sidebar-wrapper">
-          <div className="sidebar-content">
+        <nav id="sidebar" className="sidebar-wrapper"   >
+          <div className="sidebar-content"  >
 
 
 
-            <div className="sidebar-brand" style={{ marginBottom: '20px', paddingLeft: '15px', borderBottom: '1px solid #ccc' }}>
+            <div className="sidebar-brand" style={{  marginBottom: '20px', paddingLeft: '15px', borderBottom: '1px solid #ccc' }}>
               {auth.user.role === 'admin' || auth.user.role === 'moderador' ? (
                 <Link to="/pages/administracion/automobilesaprove" style={{ color: '#007bff', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
                   <i className="fas fa-user-cog" style={{ fontSize: '24px', marginRight: '10px' }}></i>
@@ -247,7 +247,7 @@ const Home = () => {
               ) : (
                 <Link to="/" style={{ color: '#007bff', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
                   <i className="fas fa-chart-line" style={{ fontSize: '24px', marginRight: '10px' }}></i>
-                  <span style={{ fontSize: '20px' }}>Tassili</span>
+                  <span style={{ fontSize: '20px',color:'red' }}>Tassili</span>
                 </Link>
               )}
               <div id="close-sidebar" style={{ marginLeft: 'auto', paddingRight: '15px', cursor: 'pointer' }}>
@@ -285,7 +285,7 @@ const Home = () => {
 
 
             <div className="sidebar-menu">
-              <div className="card" style={{ padding: '10px' }}>
+              <div className="card-body" style={{ padding: '10px'}}  >
 
                
                 <Status />
@@ -298,7 +298,7 @@ const Home = () => {
 
 
                 <form>
-                  <div>
+                  
 
                     <button
                       type="button"
@@ -475,7 +475,7 @@ const Home = () => {
                         </div>
                       </div>
                     )}
-                  </div>
+                  
 
 
 

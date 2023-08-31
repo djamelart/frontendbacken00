@@ -88,7 +88,10 @@ const UserRole = () => {
             </div>
           </div>
 
+          <div>
+<button style={{ padding: '10px 20px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }} onClick={() => window.location.reload()}>Refrech les articles</button>
 
+</div>
 
           <div className="sidebar-menu" style={{ paddingTop: '20px' }}>
             <ul style={{ listStyleType: 'none', padding: 0 }}>

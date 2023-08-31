@@ -350,16 +350,7 @@
   
   /*--------------------------page-content-----------------------------*/
   
-  .page-wrapper .page-content {
-    display: inline-block;
-    width: 100%;
-    padding-left: 0px;
-    padding-top: 20px;
-  }
-  
-  .page-wrapper .page-content > div {
-    padding: 20px 40px;
-  }
+
   
   .page-wrapper .page-content {
     overflow-x: hidden;
@@ -405,7 +396,7 @@
   /*-----------------------------chiller-theme-------------------------------------------------*/
   
   .chiller-theme .sidebar-wrapper {
-      background: #31353D;
+      background: #0074D9;
   }
   
   .chiller-theme .sidebar-wrapper .sidebar-header,

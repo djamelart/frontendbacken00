@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Menu from './Menu'
-import Search from './Search'
+ 
 import { useSelector  } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 const Header = () => {
@@ -19,8 +19,7 @@ const Header = () => {
                         {t('Tassili', { lng: languagee.language })}
                     </h1>
                 </Link>
-
-                <Search />
+ 
 
                 <Menu />
             </nav>

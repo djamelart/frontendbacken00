@@ -31,7 +31,7 @@ export const createPostadmin = ({content, images, auth, socket}) => async (dispa
         // Notify
         const msg = {
             id: res.data.newPost._id,
-            text: 'added a new post.',
+            text: 'ajouter une nouvelle publication.',
             recipients: res.data.newPost.user.followers,
             url: `/post/${res.data.newPost._id}`,
             content, 
@@ -108,7 +108,7 @@ export const likePostadmin = ({post, auth, socket}) => async (dispatch) => {
         // Notify
         const msg = {
             id: auth.user._id,
-            text: 'like your post.',
+            text: 'il a aimé votre publication.',
             recipients: [post.user._id],
             url: `/post/${post._id}`,
             content: post.content, 
@@ -137,7 +137,7 @@ export const unLikePostadmin = ({post, auth, socket}) => async (dispatch) => {
         // Notify
         const msg = {
             id: auth.user._id,
-            text: 'like your post.',
+            text: 'il a aimé votre publication.',
             recipients: [post.user._id],
             url: `/post/${post._id}`,
         }

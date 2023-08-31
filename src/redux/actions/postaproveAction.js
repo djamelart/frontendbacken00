@@ -37,7 +37,7 @@ export const createPostPendiente = ({ postData, marca, modelo, wilaya, commune, 
         // Notify
         const msg = {
             id: res.data.newPost._id,
-            text: 'added a new post.',
+            text: 'ajouter une nouvelle publication.',
             recipients: res.data.newPost.user.followers,
             url: `/post/${res.data.newPost._id}`,
              
@@ -103,7 +103,7 @@ export const deletePostPendiente = ({ post, auth, socket }) => async (dispatch) 
         // Notify
         const msg = {
             id: post._id,
-            text: 'added a new post.',
+            text: 'suprimer une publication.',
             recipients: res.data.newPost.user.followers,
             url: `/post/${post._id}`,
         }
