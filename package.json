@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "proxy": "https://render-app-djamel22222.onrender.com",
+  "homepage": "https://djamel-back-end.onrender.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -57,5 +57,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djamelart/fronedn555.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djamelart/fronedn555/issues"
+  },
+  "description": ""
 }
