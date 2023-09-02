@@ -70,7 +70,8 @@ const Blockcomments = () => {
               <span style={{ fontSize: '1.5rem' }}>Tassili</span>
             </Link>
             <div id="close-sidebar">
-              <i className="fas fa-times" style={{ color: '#fff', fontSize: '1.5rem' }} />
+            <i className="fas fa-bars" style={{ color: 'red', fontSize: '1.5rem' }} />
+
             </div>
           </div>
           <div className="sidebar-header" style={{ marginTop: '20px' }}>

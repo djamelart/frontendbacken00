@@ -156,7 +156,7 @@ if (auth.user.role === "admin") {
                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                     <Link className="dropdown-item" to={`/profile/${auth.user._id}`}>Profil</Link>
                    
-                  
+                    <Link className="dropdown-item" to='/pages/infoclient'>Informations sur le site</Link>
                 
                     <label htmlFor="theme" className="dropdown-item"
                     onClick={() => dispatch({

@@ -34,6 +34,7 @@ import { getUsers } from './redux/actions/users/usersAction'
 import { getPostsadmin } from './redux/actions/postadminAction'
 import StatusadminModal from './components/statusmodelll/StatusadminModal'
 import StatusModal from './components/statusmodelll/StatusModal'
+import Infoclient from './pages/infoclient'
 
 
 function App() {
@@ -108,7 +109,7 @@ function App() {
           <Route exact path="/pages/bloqueos/blockcomments" component={auth.token ? Blockcomments : Login} />
           <Route exact path="/pages/bloqueos/blockposts" component={Blockposts} />
           <Route exact path="/pages/users/usersposts" component={Usersposts} />
-
+          <Route exact path="/pages/infoclient" component={Infoclient} />
 
           <PrivateRouter exact path="/:page" component={PageRender} />
           <PrivateRouter exact path="/:page/:id" component={PageRender} />

@@ -26,6 +26,7 @@ const Discover = () => {
     }
 
     return (
+        
         <div className="post_thumb">
             {
                 discover.loading 
