@@ -39,7 +39,7 @@ const InputComment = ({children, post, onReply, setOnReply}) => {
     return (
         <form className="card-footer comment_input" onSubmit={handleSubmit} >
             {children}
-            <input type="text"  disabled={bloquecomment === 'bloque-comment'}   placeholder="Ajoutez vos commentaires..."
+            <input type="text"  disabled={bloquecomment === 'bloque-comment'}   
             value={content} onChange={e => setContent(e.target.value)}
             style={{
                 filter: theme ? 'invert(1)' : 'invert(0)',

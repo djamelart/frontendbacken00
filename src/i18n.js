@@ -264,15 +264,7 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
     ar: {
       translation: {
 
-        "relativeTime": {
-          "past": "قبل {{count}} دقائق",
-          "s": "لحظة مضت",
-          "m": "قبل دقيقة",
-          "mm": "قبل {{count}} دقائق",
-          "h": "قبل ساعة",
-          "hh": "قبل {{count}} ساعات",
-          // ...
-        },
+         
         "timeAgo": "منذ {time}",
         
          

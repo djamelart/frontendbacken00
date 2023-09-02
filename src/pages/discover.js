@@ -26,7 +26,7 @@ const Discover = () => {
     }
 
     return (
-        <div>
+        <div className="post_thumb">
             {
                 discover.loading 
                 ? <img src={LoadIcon} alt="loading" className="d-block mx-auto my-4" />

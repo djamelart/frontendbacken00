@@ -24,7 +24,7 @@ const Status = () => {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
       <button style={buttonStyles} onClick={handleButtonClick}>
-        Publicar post de automóvil
+      Publier un article Automobile
       </button>
     </div>
   );

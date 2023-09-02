@@ -5,16 +5,16 @@ import { Link } from 'react-router-dom'
 import LoadIcon from '../../images/loading.gif'
 
 import { useSelector } from 'react-redux'
- 
- 
+
+
 import jQuery from 'jquery'
 import Avatar from '../../components/Avatar'
 import { useTranslation } from 'react-i18next'
 import Postspendientes from '../../components/homePost/Postspendientes'
- 
+
 const Postspendientesss = () => {
 
- 
+
 
   const { homePostsReducer, languagee, auth } = useSelector(state => state)
 
@@ -100,48 +100,49 @@ const Postspendientesss = () => {
             </div>
           </div>
 
-<div>
-<button style={{ padding: '10px 20px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }} onClick={() => window.location.reload()}>Recevoir de nouveaux articles</button>
+          <div>
+            <button style={{ padding: '10px 20px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }} onClick={() => window.location.reload()}>Recevoir de nouveaux articles</button>
 
-</div>
+          </div>
 
           <div className="sidebar-menu" style={{ paddingTop: '20px' }}>
-            <ul style={{ listStyleType: 'none', padding: 0 }}>
-              <li className="header-menu" style={{ marginBottom: '10px', color: '#333', fontSize: '18px' }}>
-                Outils d'administration
-              </li>
-              <li className="sidebar-dropdown" style={{ marginBottom: '10px' }}>
-                <Link to="/administracion/postspendientes" style={{ color: '#007bff', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-                  <i className="fa fa-chart-line" style={{ fontSize: '20px', marginRight: '10px' }} />
-                  <span style={{ fontSize: '16px' }}>Approbation automobiles</span>
-                </Link>
-              </li>
-              <li className="sidebar-dropdown" style={{ marginBottom: '10px' }}>
-                <Link to="/pages/users/usersposts" style={{ color: '#007bff', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-                  <i className="fa fa-chart-line" style={{ fontSize: '20px', marginRight: '10px' }} />
-                  <span style={{ fontSize: '16px' }}>Liste d'utilisateur</span>
-                </Link>
-              </li>
-              <li className="sidebar-dropdown" style={{ marginBottom: '10px' }}>
-                <Link to="/pages/bloqueos/blockcomments" style={{ color: '#007bff', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-                  <i className="fa fa-chart-line" style={{ fontSize: '20px', marginRight: '10px' }} />
-                  <span style={{ fontSize: '16px' }}>Bloquer commentaires</span>
-                </Link>
-              </li>
-              <li className="sidebar-dropdown" style={{ marginBottom: '10px' }}>
-                <Link to="/pages/roles/userRole" style={{ color: '#007bff', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-                  <i className="fa fa-chart-line" style={{ fontSize: '20px', marginRight: '10px' }} />
-                  <span style={{ fontSize: '16px' }}>Attribuer des rôles</span>
-                </Link>
-              </li>
-              <li className="sidebar-dropdown" style={{ marginBottom: '10px' }}>
-                <Link to="/pages/bloqueos/blockposts" style={{ color: '#007bff', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-                  <i className="fa fa-chart-line" style={{ fontSize: '20px', marginRight: '10px' }} />
-                  <span style={{ fontSize: '16px' }}>Bloquer publication</span>
-                </Link>
-              </li>
-            </ul>
-          </div>
+  <ul style={{ listStyleType: 'none', padding: 0 }}>
+    <li className="header-menu" style={{ marginBottom: '10px', color: 'white', fontSize: '18px' }}>
+      Outils d'administration
+    </li>
+    <li className="sidebar-dropdown" style={{ marginBottom: '10px' }}>
+      <Link to="/administracion/postspendientes" style={{ color: 'white', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+        <i className="fa fa-chart-line" style={{ fontSize: '20px', marginRight: '10px' }} />
+        <span style={{ fontSize: '16px' }}>Approbation automobiles</span>
+      </Link>
+    </li>
+    <li className="sidebar-dropdown" style={{ marginBottom: '10px' }}>
+      <Link to="/pages/users/usersposts" style={{ color: 'white', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+        <i className="fa fa-chart-line" style={{ fontSize: '20px', marginRight: '10px' }} />
+        <span style={{ fontSize: '16px' }}>Liste d'utilisateur</span>
+      </Link>
+    </li>
+    <li className="sidebar-dropdown" style={{ marginBottom: '10px' }}>
+      <Link to="/pages/bloqueos/blockcomments" style={{ color: 'white', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+        <i className="fa fa-chart-line" style={{ fontSize: '20px', marginRight: '10px' }} />
+        <span style={{ fontSize: '16px' }}>Bloquer commentaires</span>
+      </Link>
+    </li>
+    <li className="sidebar-dropdown" style={{ marginBottom: '10px' }}>
+      <Link to="/pages/roles/userRole" style={{ color: 'white', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+        <i className="fa fa-chart-line" style={{ fontSize: '20px', marginRight: '10px' }} />
+        <span style={{ fontSize: '16px' }}>Attribuer des rôles</span>
+      </Link>
+    </li>
+    <li className="sidebar-dropdown" style={{ marginBottom: '10px' }}>
+      <Link to="/pages/bloqueos/blockposts" style={{ color: 'white', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+        <i className="fa fa-chart-line" style={{ fontSize: '20px', marginRight: '10px' }} />
+        <span style={{ fontSize: '16px' }}>Bloquer publication</span>
+      </Link>
+    </li>
+  </ul>
+</div>
+
         </div>
       </nav>
 
@@ -171,7 +172,7 @@ const Postspendientesss = () => {
               ? <img src={LoadIcon} alt="loading" className="d-block mx-auto" />
               : (homePostsReducer.posts === 0 && homePostsReducer.posts.length === 0)
                 ? <h2 className="text-center"> {t('No post', { lng: languagee.language })}</h2>
-                : <Postspendientes/>
+                : <Postspendientes />
           }
 
 
@@ -184,7 +185,7 @@ const Postspendientesss = () => {
         </div>
 
       </main>
-     
+
 
 
 

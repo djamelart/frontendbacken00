@@ -97,7 +97,7 @@ const CommentCard = ({children, comment, post, commentId}) => {
                         : <div>
                             {
                                 comment.tag && comment.tag._id !== comment.user._id &&
-                                <Link to={`/profile/${comment.tag._id}`} className="mr-1">
+                                <Link to={`/profile/${comment.tag._id}`}  >
                                     @{comment.tag.username}
                                 </Link>
                             }
@@ -129,15 +129,15 @@ const CommentCard = ({children, comment, post, commentId}) => {
   {
     onEdit
     ? <>
-      <small className="font-weight-bold mr-3" style={{ color: '#28A745' }} onClick={handleUpdate}>
+      <small className="font-weight-bold  " style={{ color: '#28A745' }} onClick={handleUpdate}>
       {t('update', { lng: languagee.language })}
       </small>
-      <small className="font-weight-bold mr-3" style={{ color: '#DC3545' }} onClick={() => setOnEdit(false)}>
+      <small className="font-weight-bold"   style={{ color: '#DC3545' }} onClick={() => setOnEdit(false)}>
       {t('cancel', { lng: languagee.language })}
       </small>
     </>
 
-    : <small className="font-weight-bold mr-3" style={{ color: onReply ? '#DC3545' : '#17A2B8' }} onClick={handleReply}>
+    : <small className="font-weight-bold  " style={{ color: onReply ? '#DC3545' : '#17A2B8' }} onClick={handleReply}>
         {onReply ? t('Annuler') : t('Répondre')}
       </small>
   }

@@ -47,9 +47,12 @@ const CardBody = ({ post }) => {
 
           <div className="card-body row">
   <div className="col-md-6 d-flex align-items-center justify-content-between">
-    <div>
-      {new Date(post.createdAt).toLocaleDateString()}
-    </div>
+  <div style={{ textAlign: 'left' }}>
+  <span style={{ color: 'blue' }}>Publié le: </span>
+  <span style={{ color: 'red' }}>{new Date(post.createdAt).toLocaleDateString()}</span>
+</div>
+
+
     <div className="d-flex align-items-center details-item">
       <i className="far fa-heart text-danger mr-2" style={{ fontSize: '1.2rem' }}></i>
       <span className="details-count" style={{ fontSize: '1rem', fontWeight: 'bold' }}>
@@ -79,11 +82,4 @@ const CardBody = ({ post }) => {
 };
 
 export default CardBody;
-/*
-          <div className="px-2 mt-3 d-flex justify-content-center align-items-center">
-            <div className="btn btn-primary px-4" style={{ backgroundColor: '#007bff', borderColor: '#007bff', margin: '0 15px' }}>
-              <Link to={`/post/${post._id}`} className="text-white" style={{ textDecoration: 'none' }}>
-                {t('Voir les détails', { lng: languagee.language })}
-              </Link>
-            </div>
-          </div>*/
+ 

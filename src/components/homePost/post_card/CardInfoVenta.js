@@ -5,8 +5,7 @@ import FollowBtn from '../../FollowBtn';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next'
 
-//import React, { useState, useEffect } from 'react';
-//import { getDataAPI } from '../../../utils/fetchData';
+ 
 
 const CardInfoVenta = ({ post }) => {
 
@@ -14,25 +13,12 @@ const CardInfoVenta = ({ post }) => {
   const { t } = useTranslation();
   const { specifications } = post;
   const { user } = useSelector(state => state.auth);
-  // const [views, setViews] = useState(0);
-
-  /*
- useEffect(() => {
-   getDataAPI(`post/${post._id}`)
-     .then(response => response.json())
-     .then(data => {
-       setViews(data.views);
-     })
-     .catch(error => {
-       console.error('Error fetching views:', error);
-     });
- }, [post._id]);
-*/
+ 
 
 
   return (
     <div>
-      <div className="container mt-4 mb-4 ">
+      <div className="container mt-2 mb-2 ">
         <div className="row">
 
           <div className="col-12">
@@ -40,10 +26,9 @@ const CardInfoVenta = ({ post }) => {
 
 
             <article className="card car-details label-info new">
-              <div className=" card-body ">
+             
                 <div className="d-flex flex-md-row align-items-md-start align-items-center flex-column">
-                  <div  >
-                  </div>
+                  
                   <div className="w-100 ">
 
                     <div className='card-title mb-2 ml-2 mt-2' style={{ textAlign: languagee.language === 'ar' ? 'right' : 'left' }} >
@@ -134,7 +119,7 @@ const CardInfoVenta = ({ post }) => {
                     </div>
                   </div>
                 </div>
-              </div>
+               
             </article>
           </div>
         </div>

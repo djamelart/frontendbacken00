@@ -34,6 +34,7 @@ import Locacionprecioautomobile from '../components/ranges/Locacionprecioautomob
 import { getPosts, POST_TYPES } from '../redux/actions/postAction';
  
 import Kilometrajeautomobile from '../components/ranges/Kilometrajeautomobile';
+import Statusadmin from '../components/homeAdmin/Statusadmin';
 
 
 const Home = () => {
@@ -225,347 +226,327 @@ const Home = () => {
 
   
   return (
-    <div   >
-      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
-      <meta name="description" content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3" />
-
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossOrigin="anonymous" />
-      <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" />
-       <div className="page-wrapper chiller-theme toggled" >
-        
-        <nav id="sidebar" className="sidebar-wrapper"   >
-          <div className="sidebar-content"  >
-
-
-
-            <div className="sidebar-brand" style={{  marginBottom: '20px', paddingLeft: '15px', borderBottom: '1px solid #ccc' }}>
-              {auth.user.role === 'admin' || auth.user.role === 'moderador' ? (
-                <Link to="/pages/administracion/automobilesaprove" style={{ color: '#007bff', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-                  <i className="fas fa-user-cog" style={{ fontSize: '24px', marginRight: '10px' }}></i>
-                  <span style={{ fontSize: '16px' }}>Administration</span>
-                </Link>
-              ) : (
-                <Link to="/" style={{ color: '#007bff', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-                  <i className="fas fa-chart-line" style={{ fontSize: '24px', marginRight: '10px' }}></i>
-                  <span style={{ fontSize: '20px',color:'red' }}>Tassili</span>
-                </Link>
-              )}
-              <div id="close-sidebar" style={{ marginLeft: 'auto', paddingRight: '15px', cursor: 'pointer' }}>
-                <i className="fas fa-times" style={{ fontSize: '24px', color: '#333' }} />
-              </div>
+    <div>
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <meta
+      name="description"
+      content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3"
+    />
+  
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossOrigin="anonymous"
+    />
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" />
+    <div className="page-wrapper chiller-theme toggled">
+      <nav id="sidebar" className="sidebar-wrapper" style={{ background: '#333', color: '#fff' }}>
+        <div className="sidebar-content">
+          <div className="sidebar-brand" style={{ marginBottom: '20px', paddingLeft: '15px', borderBottom: '1px solid #ccc' }}>
+            {auth.user.role === 'admin' || auth.user.role === 'moderador' ? (
+              <Link to="/pages/administracion/automobilesaprove" style={{ color: '#007bff', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+                <i className="fas fa-user-cog" style={{ fontSize: '24px', marginRight: '10px' }}></i>
+                <span style={{ fontSize: '16px' }}>Administration</span>
+              </Link>
+            ) : (
+              <Link to="/" style={{ color: '#007bff', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+                <i className="fas fa-chart-line" style={{ fontSize: '24px', marginRight: '10px' }}></i>
+                <span style={{ fontSize: '20px', color: 'red' }}>Tassili</span>
+              </Link>
+            )}
+            <div id="close-sidebar" style={{ marginLeft: 'auto', paddingRight: '15px', cursor: 'pointer' }}>
+              <i className="fas fa-times" style={{ fontSize: '24px', color: '#333' }} />
             </div>
-
-
-
-
-
-
-
-
-
-
-
-            <div className="sidebar-header" style={{ padding: '10px', borderBottom: '1px solid #ccc' }}>
-              <div className="user-pic" style={{ marginRight: '10px' }}>
-                {avatarSrc && <Avatar src={avatarSrc} className="img-responsive img-rounded" />}
-              </div>
-              <div className="user-info">
-                <span className="user-name" style={{ fontSize: '18px', fontWeight: 'bold' }}>
-                  {username && <strong>{username}</strong>}
-                </span>
-
-                <i className="fas fa-redo" style={{ padding: '20px', borderBottom: '1px solid #ccc', cursor: 'pointer' }} onClick={() => window.location.reload()} />
-              </div>
+          </div>
+  
+          <div className="sidebar-header" style={{ padding: '10px', borderBottom: '1px solid #ccc' }}>
+            <div className="user-pic" style={{ marginRight: '10px' }}>
+              {avatarSrc && <Avatar src={avatarSrc} className="img-responsive img-rounded" />}
             </div>
+            <div className="user-info">
+              <span className="user-name" style={{ fontSize: '18px', fontWeight: 'bold' }}>
+                {username && <strong>{username}</strong>}
+              </span>
+              <i
+                className="fas fa-redo"
+                style={{ padding: '20px', borderBottom: '1px solid #ccc', cursor: 'pointer' }}
+                onClick={() => window.location.reload()}
+              />
+            </div>
+          </div>
 
 
-
-
-
-
-
-            <div className="sidebar-menu">
-              <div className="card-body" style={{ padding: '10px'}}  >
-
-               
-                <Status />
-
-
-
-
-
-
-
-
-                <form>
+          <div className="sidebar-menu">
+  <div className=" " style={{ padding: '10px' }}>
+    <Status />
+    <form>
+      <button
+        type="button"
+        onClick={() => setShowSearchFields(!showSearchFields)}
+        style={{ textAlign: languagee.language === 'ar' ? 'right' : 'left' }}
+        className="btn btn-primary form-control mb-2 mt-2"
+      >
+        {t('Rechercheavance', { lng: languagee.language })}{' '}
+        <i className={`fas fa-search ${showSearchFields ? 'active' : ''}`} style={{ marginRight: '5px' }}></i>
+      </button>
+      {showSearchFields && (
+        <div>
+        <form>
                   
-
-                    <button
-                      type="button"
-                      onClick={() => setShowSearchFields(!showSearchFields)}
-                      style={{ textAlign: languagee.language === 'ar' ? 'right' : 'left' }}
-                      className="btn btn-primary form-control mb-2 mt-2"
-                    >
-                      {t('Rechercheavance', { lng: languagee.language })}{' '}
-                      <i className={`fas fa-search ${showSearchFields ? 'active' : ''}`} style={{ marginRight: '5px' }}></i>
-                    </button>
+ 
 
 
 
+                  {showSearchFields && (
+                    <div>
 
-                    {showSearchFields && (
-                      <div>
-
-                        <select
-                          value={tipoTransaccion}
-                          onChange={(e) => setTipoTransaccion(e.target.value)}
-                          className="form-control mx-2 mb-2 mt-2"
-                        >
-                          <option value="">Type de tranzacction </option>
-                          <option value="Vente">Vente </option>
-                          <option value="Location"> Locacion </option>
-                        </select>
-
-
-                        {tipoTransaccion === 'Vente' && (
-
-                          <div>
-                            <div className="search-container   mb-2 mt-2">
-                              <Wilayacommune
-                                selectedWilaya={wilayaValue}
-                                setSelectedWilaya={setWilayaValue}
-                                selectedCommune={communeValue}
-                                setSelectedCommune={setCommuneValue} />
-                            </div>
-
-                            <div className="search-container   mb-2 mt-2">
-                              <Marcamodelo
-                                selectedMarca={marcaValue}
-                                setSelectedMarca={setMarcaValue}
-                                selectedModelo={modeloValue}
-                                setSelectedModelo={setModeloValue}
-                              />
-                            </div>
-                            <div className='card-body mb-2'>
-                              <div className="search-container  mb-2 mt-2">
-                                <Ventaanoautomobile VentaAnoAutomobileeee={VentaAnoAutomobileeee} />
-                              </div>
-                              <div className="search-container   mb-2 mt-2">
-                                <Kilometrajeautomobile kilometrajeeautomobiles={kilometrajeeautomobiles} />
+                      <select
+                        value={tipoTransaccion}
+                        onChange={(e) => setTipoTransaccion(e.target.value)}
+                        className="form-control mx-2 mb-2 mt-2"
+                      >
+                        <option value="">Type de tranzacction </option>
+                        <option value="Vente">Vente </option>
+                        <option value="Location"> Locacion </option>
+                      </select>
 
 
-                              </div>
-                              <div className="search-container   mb-2 mt-2">
-                                <Ventaprecioautomobile
-                                  VentaPrecioAutomobileee={VentaPrecioAutomobileee}
-                                />
-                              </div>
+                      {tipoTransaccion === 'Vente' && (
 
-
-                            </div>
-
-                            <div className="search-container   mb-2 mt-2">
-                              <select placeholder="Couleur" value={colorValue} onChange={(e) => setColorValue(e.target.value)} className="form-control"  >
-                                <option value="">Couleur</option>
-                                <option value="Blanc">Blanc</option>
-                                <option value="Noir">Noir</option>
-                                <option value="Gris">Gris</option>
-                                <option value="Gris Argent">Gris Argent</option>
-                                <option value="Gris Souris">Gris Souris</option>
-                                <option value="Gris Manitoba">Gris Manitoba</option>
-                                <option value="Gris Champagne">Gris Champagne</option>
-                                <option value="Gris Alluminium">Gris Alluminium</option>
-                                <option value="Bleu">Bleu</option>
-                                <option value="Bleu Ciel">Bleu Ciel</option>
-                                <option value="Bleu Nuit">Bleu Nuit</option>
-                                <option value="Bleu Turquoise">Bleu Turquoise</option>
-                                <option value="Bleu Gauloise">Bleu Gauloise</option>
-                                <option value="Vert">Vert</option>
-                                <option value="Vert Bouteille">Vert Bouteille</option>
-                                <option value="Vert Militaire">Vert Militaire</option>
-                                <option value="Vert Pistache">Vert Pistache</option>
-                                <option value="Marron18">Marron</option>
-                                <option value="Maron Chocolat">Maron Chocolat</option>
-                                <option value="Rouge">Rouge</option>
-                                <option value="Rouge Bordeaux">Rouge Bordeaux</option>
-                                <option value="Grenat">Grenat</option>
-                                <option value="Rose">Rose</option>
-                                <option value="Jaun">Jaune</option>
-                                <option value="Miel">Miel</option>
-                                <option value="Beige">Beige</option>
-                                <option value="Orange">Orange</option>
-                                <option value="Violet">Violet</option>
-                                <option value="Mauve">Mauve</option>
-                                <option value="Aubergine">Aubergine</option>
-                                <option value="Autre">Autre</option>
-                              </select>
-                            </div>
-
-                            <div className="search-container  mb-2 mt-2">
-                              <select value={inergiaValue} onChange={(e) => setInergiaValue(e.target.value)} className="form-control"  >
-                                <option value="">Inergie</option>
-                                <option value="Essence">Essence</option>
-                                <option value="Diesel">Diesel</option>
-                                <option value="GPL">GPL</option></select>
-                            </div>
-
-                            <div className="search-container   mb-2 mt-2">
-                              <select value={transmicionValue} onChange={(e) => setTransmicionValue(e.target.value)} className="form-control" >
-                                <option value="">Boite</option>
-                                <option value="Manuelle">Manuelle</option>
-                                <option value="Automatique">Automatique</option>
-                                <option value="Semi Automatique">Semi Automatique</option>
-                              </select>
-                            </div>
-
+                        <div>
+                          <div className="search-container   mb-2 mt-2">
+                            <Wilayacommune
+                              selectedWilaya={wilayaValue}
+                              setSelectedWilaya={setWilayaValue}
+                              selectedCommune={communeValue}
+                              setSelectedCommune={setCommuneValue} />
                           </div>
-                        )}
 
-
-
-
-
-                        {tipoTransaccion === 'Location' && (
-
-                          <div>
+                          <div className="search-container   mb-2 mt-2">
+                            <Marcamodelo
+                              selectedMarca={marcaValue}
+                              setSelectedMarca={setMarcaValue}
+                              selectedModelo={modeloValue}
+                              setSelectedModelo={setModeloValue}
+                            />
+                          </div>
+                          <div className='card-body mb-2'>
                             <div className="search-container  mb-2 mt-2">
-                              <Wilayacommune
-                                selectedWilaya={wilayaValue}
-                                setSelectedWilaya={setWilayaValue}
-                                selectedCommune={communeValue}
-                                setSelectedCommune={setCommuneValue} />
+                              <Ventaanoautomobile VentaAnoAutomobileeee={VentaAnoAutomobileeee} />
                             </div>
-
                             <div className="search-container   mb-2 mt-2">
-                              <Marcamodelo
-                                selectedMarca={marcaValue}
-                                setSelectedMarca={setMarcaValue}
-                                selectedModelo={modeloValue}
-                                setSelectedModelo={setModeloValue}
-                              />
+                              <Kilometrajeautomobile kilometrajeeautomobiles={kilometrajeeautomobiles} />
+
+
                             </div>
-                            <div className='card-body mb-2'>
-
-
-                              <div className="search-container   mb-2 mt-2">
-                                <Locacionprecioautomobile
-                                  locacionPrecioAutomobileee={locacionPrecioAutomobileee}
-                                />
-                              </div>
+                            <div className="search-container   mb-2 mt-2">
+                              <Ventaprecioautomobile
+                                VentaPrecioAutomobileee={VentaPrecioAutomobileee}
+                              />
                             </div>
 
 
                           </div>
-                        )}
 
+                          <div className="search-container   mb-2 mt-2">
+                            <select placeholder="Couleur" value={colorValue} onChange={(e) => setColorValue(e.target.value)} className="form-control"  >
+                              <option value="">Couleur</option>
+                              <option value="Blanc">Blanc</option>
+                              <option value="Noir">Noir</option>
+                              <option value="Gris">Gris</option>
+                              <option value="Gris Argent">Gris Argent</option>
+                              <option value="Gris Souris">Gris Souris</option>
+                              <option value="Gris Manitoba">Gris Manitoba</option>
+                              <option value="Gris Champagne">Gris Champagne</option>
+                              <option value="Gris Alluminium">Gris Alluminium</option>
+                              <option value="Bleu">Bleu</option>
+                              <option value="Bleu Ciel">Bleu Ciel</option>
+                              <option value="Bleu Nuit">Bleu Nuit</option>
+                              <option value="Bleu Turquoise">Bleu Turquoise</option>
+                              <option value="Bleu Gauloise">Bleu Gauloise</option>
+                              <option value="Vert">Vert</option>
+                              <option value="Vert Bouteille">Vert Bouteille</option>
+                              <option value="Vert Militaire">Vert Militaire</option>
+                              <option value="Vert Pistache">Vert Pistache</option>
+                              <option value="Marron18">Marron</option>
+                              <option value="Maron Chocolat">Maron Chocolat</option>
+                              <option value="Rouge">Rouge</option>
+                              <option value="Rouge Bordeaux">Rouge Bordeaux</option>
+                              <option value="Grenat">Grenat</option>
+                              <option value="Rose">Rose</option>
+                              <option value="Jaun">Jaune</option>
+                              <option value="Miel">Miel</option>
+                              <option value="Beige">Beige</option>
+                              <option value="Orange">Orange</option>
+                              <option value="Violet">Violet</option>
+                              <option value="Mauve">Mauve</option>
+                              <option value="Aubergine">Aubergine</option>
+                              <option value="Autre">Autre</option>
+                            </select>
+                          </div>
 
+                          <div className="search-container  mb-2 mt-2">
+                            <select value={inergiaValue} onChange={(e) => setInergiaValue(e.target.value)} className="form-control"  >
+                              <option value="">Inergie</option>
+                              <option value="Essence">Essence</option>
+                              <option value="Diesel">Diesel</option>
+                              <option value="GPL">GPL</option></select>
+                          </div>
 
+                          <div className="search-container   mb-2 mt-2">
+                            <select value={transmicionValue} onChange={(e) => setTransmicionValue(e.target.value)} className="form-control" >
+                              <option value="">Boite</option>
+                              <option value="Manuelle">Manuelle</option>
+                              <option value="Automatique">Automatique</option>
+                              <option value="Semi Automatique">Semi Automatique</option>
+                            </select>
+                          </div>
 
-                        <div className="search-container card-body   mb-2 mt-2" style={{ display: 'flex', justifyContent: 'space-between' }}>
-                          <button type="button" onClick={handleBuscar} className="btn btn-primary">
-                            Filtre
-
-                          </button>
-
-
-
-                          <button type="button" onClick={handleReset} className="btn btn-secondary mr-2">
-                            <i className="fas fa-redo" style={{ cursor: 'pointer' }} />
-                          </button>
                         </div>
+                      )}
+
+
+
+
+
+                      {tipoTransaccion === 'Location' && (
+
+                        <div>
+                          <div className="search-container  mb-2 mt-2">
+                            <Wilayacommune
+                              selectedWilaya={wilayaValue}
+                              setSelectedWilaya={setWilayaValue}
+                              selectedCommune={communeValue}
+                              setSelectedCommune={setCommuneValue} />
+                          </div>
+
+                          <div className="search-container   mb-2 mt-2">
+                            <Marcamodelo
+                              selectedMarca={marcaValue}
+                              setSelectedMarca={setMarcaValue}
+                              selectedModelo={modeloValue}
+                              setSelectedModelo={setModeloValue}
+                            />
+                          </div>
+                          <div className='card-body mb-2'>
+
+
+                            <div className="search-container   mb-2 mt-2">
+                              <Locacionprecioautomobile
+                                locacionPrecioAutomobileee={locacionPrecioAutomobileee}
+                              />
+                            </div>
+                          </div>
+
+
+                        </div>
+                      )}
+
+
+
+
+                      <div className="search-container card-body   mb-2 mt-2" style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <button type="button" onClick={handleBuscar} className="btn btn-primary">
+                          Filtre
+
+                        </button>
+
+
+
+                        <button type="button" onClick={handleReset} className="btn btn-secondary mr-2">
+                          <i className="fas fa-redo" style={{ cursor: 'pointer' }} />
+                        </button>
                       </div>
-                    )}
-                  
-
-
-
-                </form>
-                <div className='card mb-2'  >
-                  <Link to={`/profile/${auth.user._id}`} style={{ textAlign: languagee.language === 'ar' ? 'right' : 'left' }} className="btn btn-secondary mt-2">
-                    {t('voireprofile', { lng: languagee.language })}
-                  </Link>
-                  <Link to="/message" style={{ textAlign: languagee.language === 'ar' ? 'right' : 'left' }} className="btn btn-primary mt-2">
-                    {t('comunicarconeladiminstrador', { lng: languagee.language })}
-                  </Link>
-                </div>
-
-                <div className='card mt-4'>
-                  {auth.user.role === 'admin' && <Status />}
-
-                  {auth.user.role === 'admin' && (
-                    <Link to="/pages/administracion/automobilesaprove" className="btn btn-primary ">
-                      Administration Djamel
-                    </Link>
+                    </div>
                   )}
-
-                </div>
-
+                
 
 
 
-              </div>
-
-            </div>
-
-          </div>
-
-        </nav>
-
-        <main className="page-content">
-          <div className="container-fluid">
-
-            <div className="home">
-
-              {homePostsadminReducer.loading ? (
-                <img src={LoadIcon} alt="loading" className="d-block mx-auto" />
-              ) : (
-                homePostsadminReducer.result === 0 && homePostsadminReducer.posts.length === 0 ? (
-                  <h2 className="text-center">  </h2>
-                ) : (
-                  <Postsadmin />
-                )
-              )}
-            </div>
+              </form>
+        
+        </div>
+      )}
+    </form>
 
 
-            <span style={{ display: 'block', margin: '15px 0' }}>
-              <div className="alert alert-info" role="alert" style={{ background: '#d1e7f7', borderRadius: '15px', padding: '7px', display: 'flex', alignItems: 'center' }}>
-
-                <p style={{ fontSize: '16px', margin: '0', color: '#333' }}> </p>
-              </div>
-            </span>
-
-
-            <div className="home">
-
-              {homePostsReducer.loading ? (
-                <img src={LoadIcon} alt="loading" className="d-block mx-auto" />
-              ) : (
-                homePostsReducer.result === 0 && homePostsReducer.posts.length === 0 ? (
-                  <h2 className="text-center">  </h2>
-                ) : (
-                  <Posts />
-                )
-              )}
-            </div>
-
-
-
-
-
-          </div>
-
-
-
-
-        </main>
-
-      </div>
-
-
-
-
+    <div className="card mb-2">
+     
+      <Link to="/message" style={{ textAlign: languagee.language === 'ar' ? 'right' : 'left' }} className="btn btn-primary mt-2">
+        {t('comunicarconeladiminstrador', { lng: languagee.language })}
+      </Link>
     </div>
+    <div className="card mt-2">
+      {auth.user.role === 'admin' && <Statusadmin />}
+      {auth.user.role === 'admin' && (
+        <Link to="/pages/administracion/postspendientes" className="btn btn-primary">
+          Administration Djamel
+        </Link>
+      )}
+    </div>
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+        </div>
+      </nav>
+  
+
+
+
+
+
+  
+      <main   >
+        <div className="container-fluid">
+          <div  >
+            {homePostsadminReducer.loading ? (
+              <img src={LoadIcon} alt="loading" className="d-block mx-auto" />
+            ) : (
+              homePostsadminReducer.result === 0 && homePostsadminReducer.posts.length === 0 ? (
+                <h2 className="text-center"> </h2>
+              ) : (
+                <Postsadmin />
+              )
+            )}
+          </div>
+  
+          <span style={{ display: 'block', margin: '2px 0' }}>
+            <div className="alert alert-info" role="alert" style={{ background: '#d1e7f7', borderRadius: '15px', padding: '7px', display: 'flex', alignItems: 'center' }}>
+              <p style={{ fontSize: '16px', margin: '0', color: '#333' }}> </p>
+            </div>
+          </span>
+  
+          <div className="home">
+            {homePostsReducer.loading ? (
+              <img src={LoadIcon} alt="loading" className="d-block mx-auto" />
+            ) : (
+              homePostsReducer.result === 0 && homePostsReducer.posts.length === 0 ? (
+                <p className="text-center">  </p>
+              ) : (
+                <Posts />
+              )
+            )}
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  
   )
 }
 

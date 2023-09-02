@@ -2,36 +2,13 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux';
 import FollowBtn from '../../FollowBtn';
  
-//import React, { useState, useEffect } from 'react';
-//import { getDataAPI } from '../../../utils/fetchData';
- 
 const CardInfoAlquiler = ({ post }) => {
 
   const { languagee } = useSelector(state => state)
   const { t } = useTranslation();
   const { specifications } = post;
   const { user } = useSelector(state => state.auth);
-  //const [views, setViews] = useState(0);
- 
-  /* 
-  useEffect(() => {
-    getDataAPI(`post/${post._id}`)
-      .then(response => {
-        console.log('API Response:', response);
-        return response.json();
-      })
-      .then(data => {
-        console.log('Data:', data);
-        setViews(data.views);
-      })
-      .catch(error => {
-        console.error('Error fetching views:', error);
-      });
-      console.log(post._id)
-
-  }, [post._id]);
   
-*/
 
 
   return (
@@ -44,7 +21,7 @@ const CardInfoAlquiler = ({ post }) => {
 
 
             <article className="card car-details label-info new">
-              <div className=" ">
+              
                 <div className="d-flex flex-md-row align-items-md-start align-items-center flex-column">
                   
                   <div className="w-100">
@@ -126,7 +103,7 @@ const CardInfoAlquiler = ({ post }) => {
                     </div>
                   </div>
                 </div>
-              </div>
+             
             </article>
 
           </div>

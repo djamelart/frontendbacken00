@@ -2,18 +2,16 @@ import React, { useEffect } from 'react'
 
 import { useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import moment from 'moment'
+ 
 import { GLOBALTYPES } from '../../../redux/actions/globalTypes'
 import { deletePostadmin } from '../../../redux/actions/postadminAction'
 
 import { BASE_URL } from '../../../utils/config'
-import { useTranslation } from 'react-i18next'
-
+ 
 
 const CardHeader = ({ post }) => {
     const { auth, socket } = useSelector(state => state)
-    const { languagee } = useSelector((state) => state);
-    const { t } = useTranslation();
+ 
     const dispatch = useDispatch()
 
     const history = useHistory()
@@ -34,31 +32,11 @@ const CardHeader = ({ post }) => {
     }
 
 
-    useEffect(() => {
-        moment.locale(languagee.language); // Configura Moment.js con el idioma deseado
-    }, [languagee.language]);
-
-    // Genera la cadena de tiempo relativo
-    const relativeTime = moment(post.createdAt).fromNow()
-
-
+ 
 
     return (
         <div className="card_header">
-            <div className="d-flex">
-
-                <div className="card_name">
-
-                    <small className="text-muted">
-                        {t('relativeTime', { count: relativeTime })} {/* Puedes pasar {{count}} como argumento */}
-                    </small>
-
-
-
-
-                </div>
-            </div>
-
+       
             <div className="nav-item dropdown">
                 <span className="material-icons" id="moreLink" data-toggle="dropdown">
                     more_horiz
