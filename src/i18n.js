@@ -6,6 +6,16 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
   resources: {
     en: {
       translation: {
+        "relativeTime": {
+          "past": "{{count}} minutes ago",
+          "s": "a moment ago",
+          "m": "a minute ago",
+          "mm": "{{count}} minutes ago",
+          "h": "an hour ago",
+          "hh": "{{count}} hours ago",
+          // ...
+        },
+         
         "Suggestions for you": "Suggestions for you",
         "welcome to Tassili Share your post with us": "Welcome to Tasili! Share your ideas with us",
         "share your post with us": "Share your post with us",
@@ -130,6 +140,18 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
 
     fr: {
       translation: {
+         
+        "relativeTime": {
+          "past": "il y a {{count}} minutes",
+          "s": "il y a un moment",
+          "m": "il y a une minute",
+          "mm": "il y a {{count}} minutes",
+          "h": "il y a une heure",
+          "hh": "il y a {{count}} heures",
+          // ...
+        },
+
+        
         "Suggestions for you": "Suggestions pour vous",
         "welcome to Tassili Share your post with us": "Bienvenue à Tasili! Partage tes idées avec nous",
         "share your post with us": "Partagez votre publication avec nous",
@@ -241,6 +263,19 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
     },
     ar: {
       translation: {
+
+        "relativeTime": {
+          "past": "قبل {{count}} دقائق",
+          "s": "لحظة مضت",
+          "m": "قبل دقيقة",
+          "mm": "قبل {{count}} دقائق",
+          "h": "قبل ساعة",
+          "hh": "قبل {{count}} ساعات",
+          // ...
+        },
+        "timeAgo": "منذ {time}",
+        
+         
         "Suggestions for you": " اقتراحات لك من المستخدمين",
         "welcome to Tassili Share your post with us": "مرحبا بكم في تاسيلي شاركنا بأفكارك",
         "share your post with us": "شارك منشورك معنا",
