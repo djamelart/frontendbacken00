@@ -226,34 +226,29 @@ const Home = () => {
   
   return (
     <div   >
-      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
-      <meta name="description" content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3" />
-
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossOrigin="anonymous" />
-      <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" />
-      <div className="page-wrapper chiller-theme toggled">
+           <div className="page-wrapper chiller-theme toggled">
         
         <nav id="sidebar" className="sidebar-wrapper">
           <div className="sidebar-content">
 
 
+          <div className="sidebar-brand" style={{ marginBottom: '20px', paddingLeft: '15px', borderBottom: '1px solid #ccc' }}>
+  {auth.user.role === 'admin' || auth.user.role === 'moderador' ? (
+    <Link to="/pages/administracion/automobilesaprove" style={{ color: 'white', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+      <i className="fas fa-user-cog" style={{ fontSize: '24px', marginRight: '10px' }}></i>
+      <span style={{ fontSize: '16px' }}>Administration</span>
+    </Link>
+  ) : (
+    <Link to="/" style={{ color: 'white', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+      <i className="fas fa-chart-line" style={{ fontSize: '24px', marginRight: '10px' }}></i>
+      <span style={{ fontSize: '20px' }}>Tassili</span>
+    </Link>
+  )}
+  <div id="close-sidebar" style={{ marginLeft: 'auto', paddingRight: '15px', cursor: 'pointer' }}>
+    <i className="fas fa-bars" style={{ color: 'red', fontSize: '1.5rem' }} />
+  </div>
+</div>
 
-            <div className="sidebar-brand" style={{ marginBottom: '20px', paddingLeft: '15px', borderBottom: '1px solid #ccc' }}>
-              {auth.user.role === 'admin' || auth.user.role === 'moderador' ? (
-                <Link to="/pages/administracion/automobilesaprove" style={{ color: '#007bff', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-                  <i className="fas fa-user-cog" style={{ fontSize: '24px', marginRight: '10px' }}></i>
-                  <span style={{ fontSize: '16px' }}>Administration</span>
-                </Link>
-              ) : (
-                <Link to="/" style={{ color: '#007bff', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-                  <i className="fas fa-chart-line" style={{ fontSize: '24px', marginRight: '10px' }}></i>
-                  <span style={{ fontSize: '20px' }}>Tassili</span>
-                </Link>
-              )}
-              <div id="close-sidebar" style={{ marginLeft: 'auto', paddingRight: '15px', cursor: 'pointer' }}>
-              <i className="fas fa-bars" style={{ color: 'red', fontSize: '1.5rem' }} />
-              </div>
-            </div>
 
 
 
@@ -481,11 +476,9 @@ const Home = () => {
 
                 </form>
                 <div className='card mb-2'  >
-                  <Link to={`/profile/${auth.user._id}`} style={{ textAlign: languagee.language === 'ar' ? 'right' : 'left' }} className="btn btn-secondary mt-2">
-                    {t('voireprofile', { lng: languagee.language })}
-                  </Link>
+                
                   <Link to="/message" style={{ textAlign: languagee.language === 'ar' ? 'right' : 'left' }} className="btn btn-primary mt-2">
-                    {t('comunicarconeladiminstrador', { lng: languagee.language })}
+                  Contacter l'administrateur
                   </Link>
                 </div>
 
@@ -493,8 +486,8 @@ const Home = () => {
                   {auth.user.role === 'admin' && <Status />}
 
                   {auth.user.role === 'admin' && (
-                    <Link to="/pages/administracion/automobilesaprove" className="btn btn-primary ">
-                      Administration Djamel
+                    <Link to="/administracion/postspendientes" className="btn btn-primary ">
+                      Administration  
                     </Link>
                   )}
 
@@ -511,7 +504,7 @@ const Home = () => {
 
         </nav>
 
-        <main className="page-content">
+        <main  >
           <div className="container-fluid">
 
             <div className="home">
