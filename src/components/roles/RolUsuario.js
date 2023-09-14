@@ -58,7 +58,7 @@ const RolUsuario = () => {
                 onChange={(e) => handleChangeRole(user, e.target.value)}
               >
                 <option value=''>Seleccionar Rol</option>
-                <option value='bloqueado'>Bloque utilizateur</option>
+                <option value='bloqueado'>Bloque </option>
                 <option value='user'>Utilisateur authentifié</option>
                 <option value='Super-utilisateur'>Super utilisateur</option>
                 <option value='Moderateur'>Moderateur</option>
