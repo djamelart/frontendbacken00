@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 import jQuery from 'jquery'
 
 import Avatar from '../components/Avatar';
-import { useSelector, useDispatch } from 'react-redux'
+ 
 
 
 
@@ -35,19 +35,31 @@ import { getPosts, POST_TYPES } from '../redux/actions/postAction';
  
 import Kilometrajeautomobile from '../components/ranges/Kilometrajeautomobile';
 
-import { useHistory } from 'react-router-dom'
-const Home = () => {
+ 
+  
+import { setHeaderVisibility } from '../redux/actions/profileAction'; // Asegúrate de importar la acción adecuada
 
+import { useSelector, useDispatch } from 'react-redux'
+import {  useHistory } from 'react-router-dom'
+const Home = () => {
+  
   const { homePostsReducer, auth, homePostsadminReducer, languagee } = useSelector((state) => state);
   const { user } = useSelector(state => state.auth);
+  const dispatch = useDispatch()
+ 
   const history = useHistory()
   useEffect(() => {
-      
-    if  (user.role ="bloqueado") {
-      
-      history.push('/bloqueos');
+    if (user.role === "bloqueado") {
+      dispatch(setHeaderVisibility(false));
+      // Redirige al usuario bloqueado a la página 404
+      history.push('/bloqueos'); // Asegúrate de que la ruta '/404' exista en tus rutas
+    } else {
+      dispatch(setHeaderVisibility(true));
     }
-  }, [user, history]);
+  }, [dispatch, user, history]);
+  
+ 
+
 
 
   useEffect(() => {
@@ -142,7 +154,7 @@ const Home = () => {
     dispatch(getPosts(auth.token));
   };
 
-  const dispatch = useDispatch()
+ 
 
  
 

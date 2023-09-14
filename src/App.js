@@ -39,7 +39,7 @@ import Bloqueos from './pages/bloqueos'
 
 
 function App() {
-  const { auth, status, statusadmin, modal, call } = useSelector(state => state)
+  const { auth,profile, status, statusadmin, modal, call } = useSelector(state => state)
   const dispatch = useDispatch()
 
 
@@ -94,7 +94,8 @@ function App() {
       <input type="checkbox" id="theme" />
       <div className={`App ${(status || statusadmin || modal) && 'mode'}`}>
         <div className="main">
-          {auth.token && <Header />}
+        {profile.isHeaderVisible && auth.token && <Header />}
+
           {status && <StatusModal />}
           {statusadmin && <StatusadminModal />}
           {auth.token && <SocketClient />}
@@ -111,7 +112,9 @@ function App() {
           <Route exact path="/pages/bloqueos/blockposts" component={Blockposts} />
           <Route exact path="/pages/users/usersposts" component={Usersposts} />
           <Route exact path="/pages/infoclient" component={Infoclient} />
+         
           <Route exact path="/bloqueos" component={Bloqueos} />
+          
           <PrivateRouter exact path="/:page" component={PageRender} />
           <PrivateRouter exact path="/:page/:id" component={PageRender} />
 

@@ -5,11 +5,20 @@ const initialState = {
     loading: false,
     ids: [],
     users: [],
-    posts: []
+    posts: [],
+    isHeaderVisible: true, // Inicialmente visible
+
 }
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type){
+
+        case 'SET_HEADER_VISIBILITY':
+            return {
+              ...state,
+              isHeaderVisible: action.payload,
+            };
+
         case PROFILE_TYPES.LOADING:
             return {
                 ...state,
