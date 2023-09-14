@@ -12,7 +12,7 @@ export const ROLES_TYPES = {
 
 export const roleusernoidentificado = (user, auth) => async (dispatch) => {
   try {
-    const res = await patchDataAPI(`user/${user._id}/roleusernoidantificado`, { role: 'Utilisateur-No-authentifié' }, auth.token);
+    const res = await patchDataAPI(`user/${user._id}/roleusernoidantificado`, { role: 'bloqueado' }, auth.token);
     console.log(res.data)
  
     dispatch({

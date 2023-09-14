@@ -13,7 +13,7 @@ const roleeReducer = (state = initialState, action) => {
         case ROLES_TYPES.USER_ROLENOIDANTIFIE:
           return {
             ...state,
-            role: "Utilisateur-No-authentifié",
+            role: "bloqueado",
             user: action.payload.user
           };
         case ROLES_TYPES.USER_ROLE:

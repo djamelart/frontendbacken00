@@ -35,11 +35,19 @@ import { getPosts, POST_TYPES } from '../redux/actions/postAction';
  
 import Kilometrajeautomobile from '../components/ranges/Kilometrajeautomobile';
 
-
+import { useHistory } from 'react-router-dom'
 const Home = () => {
 
   const { homePostsReducer, auth, homePostsadminReducer, languagee } = useSelector((state) => state);
-
+  const { user } = useSelector(state => state.auth);
+  const history = useHistory()
+  useEffect(() => {
+      
+    if  (user.role ="bloqueado") {
+      
+      history.push('/bloqueos');
+    }
+  }, [user, history]);
 
 
   useEffect(() => {

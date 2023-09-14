@@ -1,12 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Menu from './Menu'
- 
+import { useHistory } from 'react-router-dom'
 import { useSelector  } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 const Header = () => {
     const {  languagee } = useSelector(state => state)
- 
+  const { user } = useSelector(state => state.auth);
+    
+
+    const history = useHistory()
+  useEffect(() => {
+      
+    if  (user.role ="") {
+      
+      history.push('/pages/bloqueos');
+    }
+  }, [user, history]);
     const { t } = useTranslation();
     return (
         <div className="header bg-light">
