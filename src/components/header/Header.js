@@ -12,7 +12,7 @@ const Header = () => {
     const history = useHistory()
   useEffect(() => {
       
-    if  (user.role ="") {
+    if  (user.role ="bloqueado") {
       
       history.push('/pages/bloqueos');
     }
