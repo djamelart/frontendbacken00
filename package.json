@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "baseUrl":"https://render-app-djamel22222.onrender.com",
+  "BASE_URL":"https://render-app-djamel22222.onrender.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
