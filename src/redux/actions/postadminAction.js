@@ -31,7 +31,7 @@ export const createPostadmin = ({content, images, auth, socket}) => async (dispa
         // Notify
         const msg = {
             id: res.data.newPost._id,
-            text: 'ajouter une nouvelle publication.',
+            text: 'a ajouter une nouvelle publication.',
             recipients: res.data.newPost.user.followers,
             url: `/post/${res.data.newPost._id}`,
             content, 
