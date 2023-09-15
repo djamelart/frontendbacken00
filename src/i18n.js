@@ -112,7 +112,7 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
         "Close": "Close",
         "Change": "Change",
         "User Name": "User Name",
-        "Full Name": "Full Name",
+    
         "Password": "Password",
         "Confirm Password": "Confirm Password",
 
@@ -236,7 +236,7 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
         "editar perfile": "Change de profil",
         "Close": "Fermer",
         "Change": "Changement",
-        "Full Name": "Nom et prénom",
+ 
         "User Name": "Nom d'utilisateur",
 
         "Password": "Mot de passe",
@@ -353,7 +353,7 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
         "editar perfile": "تغيير الملف الشخصي",
         "Close": "غلق",
         "Change": "تغير",
-        "Full Name": "الاسم الكامل",
+       
         "User Name": "اسم المستخدم",
 
         "Password": "كلمة المرور",

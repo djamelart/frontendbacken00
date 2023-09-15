@@ -9,10 +9,10 @@ const Register = () => {
     const history = useHistory()
     const { t } = useTranslation();
     const initialState = {
-        fullname: '', username: '', email: '', password: '', cf_password: '',  
+         username: '', email: '', password: '', cf_password: '',  
     }
     const [userData, setUserData] = useState(initialState)
-    const { fullname, username, email, password, cf_password } = userData
+    const {   username, email, password, cf_password } = userData
 
     const [typePass, setTypePass] = useState(false)
     const [typeCfPass, setTypeCfPass] = useState(false)
@@ -37,16 +37,7 @@ const Register = () => {
             <form onSubmit={handleSubmit}>
                 <h3 className="text-uppercase text-center mb-4"      >{t('V-Network', { lng: languagee.language })}</h3>
 
-                <div className="form-group">
-                    <label htmlFor="fullname"    >{t('Full Name', { lng: languagee.language })}</label>
-                    <input type="text" className="form-control" id="fullname" name="fullname"
-                        onChange={handleChangeInput} value={fullname}
-                        style={{ background: `${alert.fullname ? '#fd2d6a14' : ''}` }} />
-
-                    <small className="form-text text-danger"   >
-                        {alert.fullname ? alert.fullname : ''}
-                    </small>
-                </div>
+              
 
                 <div className="form-group">
                     <label htmlFor="username">{t('User Name', { lng: languagee.language })}</label>

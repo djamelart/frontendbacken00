@@ -1,8 +1,8 @@
 {
   "name": "client",
+  "baseUrl":"https://render-app-djamel22222.onrender.com",
   "version": "0.1.0",
   "private": true,
-  "baseUrl":"https://render-app-djamel22222.onrender.com",
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@testing-library/jest-dom": "^5.11.9",

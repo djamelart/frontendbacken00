@@ -26,8 +26,10 @@ const Discover = () => {
     }
 
     return (
-        
-        <div className="post_thumb">
+        <div>
+
+       
+        <div className="">
             {
                 discover.loading 
                 ? <img src={LoadIcon} alt="loading" className="d-block mx-auto my-4" />
@@ -43,7 +45,15 @@ const Discover = () => {
                 <LoadMoreBtn result={discover.result} page={discover.page}
                 load={load} handleLoadMore={handleLoadMore} />
             }
-            
+             </div>
+             <div className='row'>
+                {
+                    !discover.loading &&
+                    <LoadMoreBtn result={discover.result} page={discover.page}
+                        load={load} handleLoadMore={handleLoadMore} />
+                }
+            </div>
+
         </div>
     )
 }
