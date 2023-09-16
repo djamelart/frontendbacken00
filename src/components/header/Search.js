@@ -36,13 +36,13 @@ const Search = () => {
     }
 
     return (
-        <form className="search_form" onSubmit={handleSearch}>
-            <input type="text" name="search" value={search} id="search" title="Enter to Search"
+        <form className="form mb-4" onSubmit={handleSearch}>
+            <input type="text" className='form-control' name="search" value={search} id="search"  
             onChange={e => setSearch(e.target.value.toLowerCase().replace(/ /g, ''))} />
 
             <div className="search_icon" style={{opacity: search ? 0 : 0.3}}>
-                <span className="material-icons">Chercher</span>
-                <span> </span>
+                <span className="material-icons">Recherche</span>
+                <span>Recherche utilizateur</span>
             </div>
 
             <div className="close_search" onClick={handleClose}
@@ -50,7 +50,7 @@ const Search = () => {
                 &times;
             </div>
 
-            <button type="submit" style={{display: 'none'}}>Chercher</button>
+            <button type="submit" style={{display: 'none'}}>Recherche</button>
 
             { load && <img className="loading" src={LoadIcon} alt="loading"  /> }
 
@@ -60,6 +60,7 @@ const Search = () => {
                         <UserCard 
                         key={user._id} 
                         user={user} 
+                        
                         border="border"
                         handleClose={handleClose} 
                         />

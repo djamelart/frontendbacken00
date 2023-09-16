@@ -9,8 +9,7 @@ import getTotalLikes from './getTotalLikes';
 import getTotalComments from './getTotalComments';
  
 import UserCard from '../UserCard';
-import Searchuser from '../header/Searchuser';
-
+ 
 
 
 
@@ -36,10 +35,7 @@ const GetUsersPosts = () => {
 
   return (
 <div>
-      <div className='card mt-4 mb-4'>
-        <Searchuser />
-      </div>
-
+       
       <div className="table-responsive">
         <table className="table table-bordered table-striped">
           <thead>
